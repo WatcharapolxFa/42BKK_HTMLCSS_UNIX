@@ -1,0 +1,15 @@
+table, td {
+    border:1px solid black;
+    border-collapse: collapse;
+}
+td {
+    width: 50%;
+    height: 2000px;
+}
+table{
+    width: 100%;
+}
+
+tr {
+    color: aliceblue ;
+}
