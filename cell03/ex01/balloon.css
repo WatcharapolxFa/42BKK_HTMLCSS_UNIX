@@ -1,0 +1,25 @@
+.center{
+    margin: 100px auto;
+    text-align: center;
+}
+
+.balloon-red {
+    background-color: red;
+}
+
+.balloon-green {
+    background-color: green;
+}
+
+.balloon-blue {
+    background-color: blue;
+}
+
+.rounded {
+    border-radius: 100%;
+}
+
+.ul.li{
+    margin: 30px auto;
+    text-align: center;
+}

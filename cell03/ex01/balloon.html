@@ -1,12 +1,57 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balloon</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Balloon</title>
+        <link rel="stylesheet" href="./balloon.css">
+		
+	</head>
+	<body class="center">
+		<h1 style="color:darkorange" id="size"></h1>
+		<h2>Balloon Color</h2>
+            <h3 style="color:red">Red</h3>
+            <h3 style="color:green">Green</h3>
+            <h3 style="color:blue">Blue</h3>
+		<div id="balloon" class="center balloon-red rounded"></div>
+		<script>
+			const balloonClass = balloon.classList;
+			let radius = 200;
+			balloon.style.height = balloon.style.width = radius;
+			size.innerHTML = balloon.style.width;
+			balloon.addEventListener('click', function() {
+				radius += 10;
+				if (radius > 420){ radius = 200; }
+				balloon.style.height = balloon.style.width = radius;
+				size.innerHTML = balloon.style.width;
+				if (balloonClass.contains('balloon-red')) {
+					changeColorBalloon(balloonClass, 'balloon-red', 'balloon-green');
+				} else if (balloonClass.contains('balloon-green')) {
+					changeColorBalloon(balloonClass, 'balloon-green', 'balloon-blue');
+				} else if (balloonClass.contains('balloon-blue')) {
+					changeColorBalloon(balloonClass, 'balloon-blue', 'balloon-red');
+				}
+			});
+			
+			balloon.addEventListener('mouseleave', function() {
+				radius -= 5;
+				if (radius <= 200) { radius = 200; }
+				else {
+					if (balloonClass.contains('balloon-red')) {
+						changeColorBalloon(balloonClass, 'balloon-red', 'balloon-blue');
+					} else if (balloonClass.contains('balloon-green')) {
+						changeColorBalloon(balloonClass, 'balloon-green', 'balloon-red');	
+					} else if (balloonClass.contains('balloon-blue')) {
+						changeColorBalloon(balloonClass, 'balloon-blue', 'balloon-green');
+					}
+				}
+				balloon.style.height = balloon.style.width = radius;
+				size.innerHTML = balloon.style.width;
+			});
+			
+			const changeColorBalloon = (oop, i, j) => {
+				oop.remove(i);
+				oop.add(j);	
+			}
+		</script>
+	</body>
 </html>

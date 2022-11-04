@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .center {
+            padding: 80px;
+            text-align: center;
+        }
+
+        input,
+        select {
+            padding: 20px;
+        }
+
+        .text-xl {
+            font-size: 15px;
+        }
+        .center.head{
+            font-size: 1000px;
+        }
+    </style>
+</head>
+
+<body class="center">
+    <h1 style="color:deeppink" class="head" >Calculator</h1>
+    <input type="text" id="num1" class="text-xl">
+    <select title="op" name="operator" class="text-xl">
+        <option value="+"> + </option>
+        <option value="-"> - </option>
+        <option value="*"> * </option>
+        <option value="/"> / </option>
+        <option value="%"> % </option>
+    </select>
+    <input type="text" id="num2" class="text-xl">
+    <input type="button" style="background-color:coral; color:white;" id="calculators" class="text-xl"
+        value="Try me! sy">
+
+    <script>
+        setInterval(function () {
+            alert('Please use me...');
+        }, 30000);
+        let sum = 0;
+        calculators.addEventListener('click', function () {
+            const operator = document.getElementsByName('operator')[0].value;
+            const number1 = parseInt(num1.value, 10);
+            const number2 = parseInt(num2.value, 10);
+
+            if (number1 < 0 || number2 < 0 || isNaN(number1) || isNaN(number2)) {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            } else if (operator === '+') {
+                sum = number1 + number2;
+            } else if (operator === '-') {
+                sum = number1 + number2;
+            } else if (operator === '*') {
+                sum = number1 * number2;
+            } else if (number2 === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            } else if (operator === '/') {
+                sum = number1 / number2;
+            } else if (operator === '%') {
+                sum = number1 % number2;
+            }
+            alert(number1 + operator + number2 + ' = ' + sum);
+            console.log(number1 + operator + number2 + ' = ' + sum);
+        });
+    </script>
+</body>
+
+</html>
