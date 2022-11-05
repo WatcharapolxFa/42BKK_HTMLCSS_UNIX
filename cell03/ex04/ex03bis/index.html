@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> 
+    <style>
+        .list {
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            background-color: tomato;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        }
+
+        .list:hover {
+            font-size: 15px;
+        }
+
+        .list:active {
+            background-color: white;
+        }
+
+        .body {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .center {
+            margin: 300px auto;
+            text-align: center;
+        }
+
+        .box {
+            width: 1000px;
+        }
+
+        .btn {
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            background-color: deeppink;
+            cursor: pointer;
+            transition-duration: 0.1s;
+			box-shadow: 0 2px rgba(36, 36, 36, 0.6);
+        }
+
+        .btn:hover {
+            background-color: darkmagenta;
+        }
+
+        .btn:active {
+            background-color: rgb(0, 0, 0);
+            transform: translateY(4px);
+        }
+
+        .rounded {
+            
+            border-radius: 10px;
+        }
+
+        .shadow {
+            color: white;
+            box-shadow: 1px 1px black;
+        }
+    </style>
+</head>
+
+<body class="center">
+    <h1>TO-DO List</h1>
+    <input id="newBtn" class="btn" type="button" value="New">
+    <div id="ft_list" class="box center"></div>
+    <script src="todo.js"></script>
+</body>
+
+</html>

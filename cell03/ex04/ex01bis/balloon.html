@@ -1,0 +1,38 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Balloon</title>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+			let radius = 200;
+			let count = 0 ;
+			const clicks = 10;
+			const touch = 5 ; 
+			const colors =['#ff0000', '#008000', '#0000ff'];
+			$(function(){
+				setCircle(radius,count);
+				$('#balloon').click(() => setCircle(radius + clicks, ++count))
+				$('#balloon').mouseleave(() => setCircle(radius - touch, --count))
+            });
+			function setCircle(newSize, newIndex) {
+			radius = newSize > 420 || newSize < 200 ? 200 : newSize;
+			count = newIndex < 0 ? colors.length - 1 :  newIndex > colors.length - 1 ? 0 : newIndex;
+			$('#balloon').innerHeight(radius);
+			$('#balloon').innerWidth(radius);
+			$('#balloon').css('border-radius', radius / 2);
+			$('#balloon').css('background-color', colors[count]);
+		}
+		</script>
+		
+	</head>
+	<body class ="center">
+		<h1 style="color:darkorange" id="size"></h1>
+		<h2>Balloon Color</h2>
+        <h3 style="color:#ff0000">Red</h3>
+        <h3 style="color:#008000">Green</h3>
+        <h3 style="color:#0000ff">Blue</h3> 
+		<div id="balloon"></div>
+		
+	</body>
+</html>
